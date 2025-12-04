@@ -101,6 +101,21 @@ export const mailboxFields: INodeProperties[] = [
 		},
 	},
 	{
+		displayName: 'Name',
+		name: 'name',
+		type: 'string',
+		required: true,
+		default: '',
+		placeholder: 'John Doe',
+		description: 'The display name for the mailbox owner',
+		displayOptions: {
+			show: {
+				resource: ['mailbox'],
+				operation: ['create'],
+			},
+		},
+	},
+	{
 		displayName: 'Additional Fields',
 		name: 'additionalFields',
 		type: 'collection',
@@ -113,13 +128,6 @@ export const mailboxFields: INodeProperties[] = [
 			},
 		},
 		options: [
-			{
-				displayName: 'Name',
-				name: 'name',
-				type: 'string',
-				default: '',
-				description: 'The display name for the mailbox',
-			},
 			{
 				displayName: 'Quota (MB)',
 				name: 'quota',

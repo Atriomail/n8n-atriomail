@@ -168,17 +168,16 @@ export class Atriomail implements INodeType {
 						const domainId = this.getNodeParameter('domainId', i) as number;
 						const localPart = this.getNodeParameter('localPart', i) as string;
 						const password = this.getNodeParameter('password', i) as string;
+						const name = this.getNodeParameter('name', i) as string;
 						const additionalFields = this.getNodeParameter('additionalFields', i) as IDataObject;
 
 						const body: IDataObject = {
 							domain_id: domainId,
 							local_part: localPart,
 							password,
+							name,
 						};
 
-						if (additionalFields.name) {
-							body.name = additionalFields.name;
-						}
 						if (additionalFields.quota) {
 							body.quota = additionalFields.quota;
 						}
