@@ -39,7 +39,7 @@ export class AtriomailApi implements ICredentialType {
 		type: 'generic',
 		properties: {
 			headers: {
-				Authorization: '=Bearer {{$credentials.apiToken}}',
+				'X-API-Key': '={{$credentials.apiToken}}',
 			},
 		},
 	};

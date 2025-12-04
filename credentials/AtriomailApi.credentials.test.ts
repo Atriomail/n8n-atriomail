@@ -45,10 +45,10 @@ describe('AtriomailApi Credentials', () => {
 			expect(credentials.authenticate.type).toBe('generic');
 		});
 
-		it('should set Authorization header with Bearer token', () => {
+		it('should set X-API-Key header', () => {
 			expect(credentials.authenticate.properties.headers).toBeDefined();
-			expect(credentials.authenticate.properties.headers!.Authorization).toBe(
-				'=Bearer {{$credentials.apiToken}}'
+			expect(credentials.authenticate.properties.headers!['X-API-Key']).toBe(
+				'={{$credentials.apiToken}}'
 			);
 		});
 	});
