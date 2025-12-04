@@ -1,5 +1,5 @@
 {
-	"name": "n8n-nodes-atriomail",
+	"name": "@atriomail-n8n/nodes",
 	"version": "0.2.0",
 	"description": "n8n community node for Atriomail - Email System Management API for managing domains, mailboxes, forwarders, and catch-all configurations",
 	"keywords": [
