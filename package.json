@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-atriomail",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "n8n community node for Atriomail - Email System Management API for managing domains, mailboxes, forwarders, and catch-all configurations",
 	"keywords": [
 		"n8n-community-node-package",
@@ -18,7 +18,7 @@
 	"homepage": "https://github.com/filipziger/n8n-atriomail",
 	"author": {
 		"name": "Atriomail",
-		"email": "support@atriomail.com"
+		"email": "admin@atriomail.com"
 	},
 	"repository": {
 		"type": "git",
