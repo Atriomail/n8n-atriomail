@@ -106,3 +106,7 @@ To use this node, you need to configure the Atriomail API credentials:
 ## License
 
 [MIT](LICENSE)
+
+## Repository
+
+[GitHub](https://github.com/filipziger/n8n-atriomail)
