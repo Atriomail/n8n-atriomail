@@ -15,14 +15,14 @@
 		"email-management"
 	],
 	"license": "MIT",
-	"homepage": "https://github.com/filipziger/n8n-atriomail",
+	"homepage": "https://atriomail.com",
 	"author": {
 		"name": "Atriomail",
 		"email": "admin@atriomail.com"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+ssh://git@github.com/filipziger/n8n-atriomail.git"
+		"url": "https://github.com/Atriomail/n8n-atriomail.git"
 	},
 	"engines": {
 		"node": ">=18.10"
