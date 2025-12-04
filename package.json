@@ -1,0 +1,68 @@
+{
+	"name": "n8n-nodes-atriomail",
+	"version": "0.1.0",
+	"description": "n8n community node for Atriomail - Email System Management API for managing domains, mailboxes, forwarders, and catch-all configurations",
+	"keywords": [
+		"n8n-community-node-package",
+		"n8n",
+		"n8n-node",
+		"atriomail",
+		"email",
+		"mailbox",
+		"domain",
+		"forwarder",
+		"catch-all",
+		"email-management"
+	],
+	"license": "MIT",
+	"homepage": "https://github.com/atriomail/n8n-nodes-atriomail",
+	"author": {
+		"name": "Atriomail",
+		"email": "support@atriomail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/atriomail/n8n-nodes-atriomail.git"
+	},
+	"engines": {
+		"node": ">=18.10"
+	},
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc && gulp build:icons",
+		"dev": "tsc --watch",
+		"format": "prettier nodes credentials --write",
+		"lint": "eslint nodes/**/*.ts credentials/**/*.ts",
+		"lintfix": "eslint nodes/**/*.ts credentials/**/*.ts --fix",
+		"prepublishOnly": "npm run build && npm run lint",
+		"test": "jest"
+	},
+	"files": [
+		"dist"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"credentials": [
+			"dist/credentials/AtriomailApi.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/Atriomail/Atriomail.node.js"
+		]
+	},
+	"devDependencies": {
+		"@types/jest": "^29.5.12",
+		"@types/node": "^20.12.12",
+		"@typescript-eslint/parser": "^7.9.0",
+		"eslint": "^8.57.0",
+		"eslint-plugin-n8n-nodes-base": "^1.16.1",
+		"gulp": "^5.0.0",
+		"jest": "^29.7.0",
+		"n8n-workflow": "*",
+		"prettier": "^3.2.5",
+		"ts-jest": "^29.1.2",
+		"typescript": "^5.4.5"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	}
+}

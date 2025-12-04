@@ -1,0 +1,10 @@
+nodes/
+credentials/
+*.ts
+!dist/**/*.ts
+tsconfig.json
+gulpfile.js
+.eslintrc.js
+.eslintrc.prepublish.js
+.prettierrc
+.gitignore
