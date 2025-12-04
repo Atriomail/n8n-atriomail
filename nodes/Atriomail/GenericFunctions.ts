@@ -3,7 +3,6 @@ import type {
 	IExecuteFunctions,
 	IHttpRequestMethods,
 	ILoadOptionsFunctions,
-	IRequestOptions,
 	JsonObject,
 } from 'n8n-workflow';
 import { NodeApiError } from 'n8n-workflow';
@@ -17,24 +16,28 @@ export async function atriomailApiRequest(
 ): Promise<IDataObject | IDataObject[]> {
 	const credentials = await this.getCredentials('atriomailApi');
 
-	const options: IRequestOptions = {
+	const options: {
+		method: IHttpRequestMethods;
+		body?: IDataObject;
+		qs?: IDataObject;
+		url: string;
+		json: boolean;
+	} = {
 		method,
-		body,
-		qs,
-		uri: `${credentials.apiUrl}/api/v1${endpoint}`,
+		url: `${credentials.apiUrl}/api/v1${endpoint}`,
 		json: true,
 	};
 
-	if (Object.keys(body).length === 0) {
-		delete options.body;
+	if (Object.keys(body).length > 0) {
+		options.body = body;
 	}
 
-	if (Object.keys(qs).length === 0) {
-		delete options.qs;
+	if (Object.keys(qs).length > 0) {
+		options.qs = qs;
 	}
 
 	try {
-		const response = await this.helpers.requestWithAuthentication.call(
+		const response = await this.helpers.httpRequestWithAuthentication.call(
 			this,
 			'atriomailApi',
 			options,
